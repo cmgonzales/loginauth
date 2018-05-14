@@ -58,7 +58,7 @@ app.use(expessValidator({
     return {
       param: formParam,
       msg: msg,
-      value: value
+      value: chesk
     };
   }
 }));
