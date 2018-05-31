@@ -17,8 +17,8 @@ var db = mongoose.connection;
 
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -44,11 +44,11 @@ resave: true
 }))
 
 //Passport (authentication system)
-app.use(passport.initialized());
+app.use(passport.initialize());
 app.use(passport.session());
 
 //Validator
-app.use(expessValidator({
+app.use(expressValidator({
   errorFormatter: function(param,msg,valie){
     var namesspace = param.split('.'),
     root = namespace.shit(),
